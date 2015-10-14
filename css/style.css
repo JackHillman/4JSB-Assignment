@@ -1,42 +1,25 @@
-body {
-	width: 400px;
-	margin: 0 auto;
+.input-group:not(:last-child) {
+	margin-bottom: 15px;
 }
-h1 {
-	clear: both;
-	float: left;
+.input-group {
+	width: 100%;
 }
-label, input, select {
-	margin: 5px 0;
-	height: 20px;
+.input-group-addon:not(.auto-resize) {
+	width: 130px;
 }
-label {
-	float: left;
-	padding:4px;
-	clear: left;
+.btn-group {
+	margin: 20px 0 0;
+	width: 100%;
 }
-input, select {
-	float: right;
-	clear: right;
+#submit {
+	width: 70%;
 }
-input {
-	padding: 0 3px;
-	width: 194px;
+#help {
+	width: 30%;
 }
-select {
-	padding: 3px;
-	height: 26px;
-	width: 205px;
+.alert {
+	margin-top: 15px;
 }
-.expire {
-	width: 97px;
-	float: right;
-	clear: none;
-	margin: 5px 0 5px 10px;
-	text-align: center;
-}
-button {
-	margin: 20px 0 0 10px;
-	width: 97px;
-	float: right;
+form {
+	margin: 20px 0 0;
 }
