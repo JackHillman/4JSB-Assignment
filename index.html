@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Assignment 1</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/style.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+		<script src="js/main.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+		<h1>Customer Details</h1>
+		<form onsubmit="return submitCheck();">
+			<label>First Name</label><input required type="text"></input>
+			<label>Last Name</label><input required type="text"></input>
+			<label>Postcode</label><input required type="text"></input>
+			<label>Email</label><input required type="text"></input>
+		<h1>Payment Details</h1>
+			<label>Credit Card</label>
+			<select>
+				<option value="MasterCard">MasterCard</option>
+				<option value="Visa">Visa</option>
+				<option value="American Expresss">American Expresss</option>
+			</select>
+			<label>Card Number</label><input required type="text"></input>
+			<label>CCV</label><input required type="text"></input>
+			<label>Expiry (MM/YYYY)</label>
+			<script src="js/filldates.js"></script>
+			<select class="expire" id="year">
+				<script>makeYears("year");</script>
+			</select>
+			<select class="expire" id="month">
+				<script>makeMonths("month");</script>
+			</select>
+			<button id="help">Help</button>
+			<button id="submit" type="submit" value="submit">Submit</button>
+		</form>
+		
+    </body>
+</html>

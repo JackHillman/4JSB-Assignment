@@ -1,0 +1,42 @@
+body {
+	width: 400px;
+	margin: 0 auto;
+}
+h1 {
+	clear: both;
+	float: left;
+}
+label, input, select {
+	margin: 5px 0;
+	height: 20px;
+}
+label {
+	float: left;
+	padding:4px;
+	clear: left;
+}
+input, select {
+	float: right;
+	clear: right;
+}
+input {
+	padding: 0 3px;
+	width: 194px;
+}
+select {
+	padding: 3px;
+	height: 26px;
+	width: 205px;
+}
+.expire {
+	width: 97px;
+	float: right;
+	clear: none;
+	margin: 5px 0 5px 10px;
+	text-align: center;
+}
+button {
+	margin: 20px 0 0 10px;
+	width: 97px;
+	float: right;
+}
