@@ -12,36 +12,36 @@
     </head>
     <body>
 		<div class="container">
-			<div class="col-xs-6 col-xs-offset-3">
-				<form onsubmit="return submitCheck();">
+			<div class="col-xs-6 col-xs-offset-3" id="main">
+				<form name="form" onsubmit="return submitCheck()" id="form">
 					<div class="panel panel-default">
-						<div class="panel-heading">Customer Details</div>
+						<div class="panel-heading"><strong>Customer Details</strong></div>
 						<div class="panel-body">
 							<div class="input-group">
 								<label class="input-group-addon">First Name</label>
-								<input class="form-control" required placeholder="Required" type="text"></input>
+								<input name="fname" class="form-control" required placeholder="Required" type="text"></input>
 							</div>
 							<div class="input-group">
 								<label class="input-group-addon">Last Name</label>
-								<input class="form-control" required placeholder="Required" type="text"></input>
+								<input name="lname" class="form-control" required placeholder="Required" type="text"></input>
 							</div>
 							<div class="input-group">
 								<label class="input-group-addon">Postcode</label>
-								<input class="form-control" required placeholder="Required" type="text"></input>
+								<input name="pcode" class="form-control" required placeholder="Required" type="text"></input>
 							</div>
 							<div class="input-group">
 								<label class="input-group-addon">Email</label>
-								<input class="form-control" required placeholder="Required" type="text"></input>
+								<input name="email" class="form-control" required placeholder="Required" type="text"></input>
 							</div>
 						</div>
 					</div>
 
 					<div class="panel panel-default">
-						<div class="panel-heading">Payment Details</div>
+						<div class="panel-heading"><strong>Payment Details</strong></div>
 						<div class="panel-body">
 							<div class="input-group">
 								<label class="input-group-addon">Credit Card</label>
-								<select class="form-control">
+								<select name="cctype" class="form-control">
 									<option value="MasterCard">MasterCard</option>
 									<option value="Visa">Visa</option>
 									<option value="American Expresss">American Expresss</option>
@@ -49,35 +49,33 @@
 							</div>
 							<div class="input-group">
 								<label class="input-group-addon">Card Number</label>
-								<input class="form-control" required placeholder="Required" type="text"></input>
+								<input name="ccnum" class="form-control" required placeholder="Required" type="text"></input>
 							</div>
 							<div class="input-group">
 								<label class="input-group-addon">CCV</label>
-								<input class="form-control" required placeholder="Required" type="text"></input>
+								<input name="ccv" class="form-control" required placeholder="Required" type="text"></input>
 							</div>
 							<div class="input-group">
 								<label class="input-group-addon auto-resize">Expiry</label>
 								<span class="input-group-addon auto-resize" style="border-right: 0;">Month</span>
 									<script src="js/filldates.js"></script>
-								<select class="form-control" id="month">
+								<select name="month" class="form-control" id="month">
 									<script>makeMonths("month");</script>
 								</select>
 								<span class="input-group-addon auto-resize" style="border-left: 0; border-right: 0;">Year</span>
-								<select class="form-control" id="year">
+								<select name="year" class="form-control" id="year">
 									<script>makeYears("year");</script>
 								</select>
 							</div>
-							<div class="text-center">
-								<div class="btn-group">
-									<button class="btn btn-primary" id="submit" type="submit" value="submit">Submit</button>
-									<button class="btn btn-default" id="help" type="button">Help</button>
-								</div>
-							</div>
 						</div>
 					</div>
+				<div class="text-center" id="buttons">
+					<div class="btn-group">
+						<button class="btn btn-default" id="help" type="button">Help</button>
+						<button class="btn btn-primary" id="submit" type="submit" value="submit">Submit</span></button>
+					</div>
+				</div>
 				</form>
-				<div class="alert alert-danger hide"><strong>Oops! </strong>You're done something wrong!</div>
-				<div class="alert alert-success hide"><strong>Success! </strong>Form submitted</div>
 			</div>
 		</div>
     </body>

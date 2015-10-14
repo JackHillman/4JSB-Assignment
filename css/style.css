@@ -8,14 +8,10 @@
 	width: 130px;
 }
 .btn-group {
-	margin: 20px 0 0;
-	width: 100%;
+	width: 50%;
 }
-#submit {
-	width: 70%;
-}
-#help {
-	width: 30%;
+.btn {
+	width: 50%;
 }
 .alert {
 	margin-top: 15px;
