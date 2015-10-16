@@ -2,7 +2,8 @@ var date = new Date(),
 	year = date.getFullYear(),
 	month = date.getMonth()
 
-function submitCheck() {
+function submitCheck()
+{
 	var info = {
 		fname: document.forms["form"]["fname"].value,
 		lname: document.forms["form"]["lname"].value,
@@ -34,7 +35,10 @@ function submitCheck() {
 	
 	var loc = document.getElementById("buttons");
 	var final = document.getElementById("main");
-	var regex = /\S+@\S+\.\S+/;
+	var email = /\S+@\S+\.\S+/;
+	var postcode = /^\d{4}$/;
+	var ccnum = /^\d{16}$/;
+	var ccv = /^\d{3}$/;
 	
 	function makeError(main, body)
 	{
@@ -45,25 +49,25 @@ function submitCheck() {
 		loc.appendChild(err);
 	}
 	
-	if (!regex.test(info.email))
+	if (!email.test(info.email))
 	{
 		makeError("Error!", "Invalid email address!");
 		document.forms["form"]["email"].select();
 		return false
 	}
-	else if (info.pcode.length != 4)
+	else if (!postcode.test(info.pcode))
 	{
 		makeError("Error!", "Postcode must be a 4 digit number!");
 		document.forms["form"]["pcode"].select();
 		return false;
 	}
-	else if (info.ccnum.length != 16)
+	else if (!ccnum.test(info.ccnum))
 	{
 		makeError("Error!", "Credit card number must be valid!");
 		document.forms["form"]["ccnum"].select();
 		return false;
 	}
-	else if (info.ccv.length != 3)
+	else if (!ccv.test(info.ccv))
 	{
 		makeError("Error!", "CCV must be 3 digits!");
 		document.forms["form"]["ccv"].select();
@@ -82,4 +86,10 @@ function submitCheck() {
 		final.appendChild(success);
 	}
 	return false;
+}
+
+function helpClick()
+{
+	window.open("html/help.html", "Help", "status = 0, height = 250px, width = 400px, menubar = no");
+	return;
 }
