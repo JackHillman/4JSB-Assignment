@@ -8,10 +8,10 @@
 	width: 130px;
 }
 .btn-group {
-	width: 50%;
+	width: 100%;
 }
 .btn {
-	width: 50%;
+	width: 33.333%;
 }
 .alert {
 	margin-top: 15px;
