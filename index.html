@@ -11,73 +11,73 @@
 		<script src="js/main.js"></script>
     </head>
     <body>
-		<div class="container">
-			<div class="col-xs-6 col-xs-offset-3" id="main">
-				<form name="form" onsubmit="return submitCheck()" id="form">
-					<div class="panel panel-default">
-						<div class="panel-heading"><strong>Customer Details</strong></div>
-						<div class="panel-body">
-							<div class="input-group">
-								<label class="input-group-addon">First Name</label>
-								<input name="fname" class="form-control" required placeholder="Required" type="text"></input>
-							</div>
-							<div class="input-group">
-								<label class="input-group-addon">Last Name</label>
-								<input name="lname" class="form-control" required placeholder="Required" type="text"></input>
-							</div>
-							<div class="input-group">
-								<label class="input-group-addon">Postcode</label>
-								<input name="pcode" class="form-control" required placeholder="Required" type="text"></input>
-							</div>
-							<div class="input-group">
-								<label class="input-group-addon">Email</label>
-								<input name="email" class="form-control" required placeholder="Required" type="text"></input>
-							</div>
-						</div>
-					</div>
-
-					<div class="panel panel-default">
-						<div class="panel-heading"><strong>Payment Details</strong></div>
-						<div class="panel-body">
-							<div class="input-group">
-								<label class="input-group-addon">Credit Card</label>
-								<select name="cctype" class="form-control">
-									<option value="MasterCard">MasterCard</option>
-									<option value="Visa">Visa</option>
-									<option value="American Expresss">American Expresss</option>
-								</select>
-							</div>
-							<div class="input-group">
-								<label class="input-group-addon">Card Number</label>
-								<input name="ccnum" class="form-control" required placeholder="Required" type="text"></input>
-							</div>
-							<div class="input-group">
-								<label class="input-group-addon">CCV</label>
-								<input name="ccv" class="form-control" required placeholder="Required" type="text"></input>
-							</div>
-							<div class="input-group">
-								<label class="input-group-addon auto-resize">Expiry</label>
-								<span class="input-group-addon auto-resize" style="border-right: 0;">Month</span>
-									<script src="js/filldates.js"></script>
-								<select name="month" class="form-control" id="month">
-									<script>makeMonths("month");</script>
-								</select>
-								<span class="input-group-addon auto-resize" style="border-left: 0; border-right: 0;">Year</span>
-								<select name="year" class="form-control" id="year">
-									<script>makeYears("year");</script>
-								</select>
+			<div class="container">
+				<div class="col-xs-6 col-xs-offset-3" id="main">
+					<form name="form" onsubmit="return submitCheck()" id="form">
+						<div class="panel panel-default">
+							<div class="panel-heading"><strong>Customer Details</strong></div>
+							<div class="panel-body">
+								<div class="input-group">
+									<label class="input-group-addon">First Name</label>
+									<input name="fname" class="form-control" required placeholder="Required" type="text"></input>
+								</div>
+								<div class="input-group">
+									<label class="input-group-addon">Last Name</label>
+									<input name="lname" class="form-control" required placeholder="Required" type="text"></input>
+								</div>
+								<div class="input-group">
+									<label class="input-group-addon">Postcode</label>
+									<input name="pcode" class="form-control" required placeholder="Required" type="text"></input>
+								</div>
+								<div class="input-group">
+									<label class="input-group-addon">Email</label>
+									<input name="email" class="form-control" required placeholder="Required" type="text"></input>
+								</div>
 							</div>
 						</div>
-					</div>
-				<div class="text-center" id="buttons">
-					<div class="btn-group">
-						<button class="btn btn-default" id="help" onclick="helpClick()" type="button">Help</button>
-						<button class="btn btn-default" onclick="otherSites()" type="button" >Go to other sites</button>
-						<button class="btn btn-primary" id="submit" type="submit" value="submit">Submit</span></button>
-					</div>
+	
+						<div class="panel panel-default">
+							<div class="panel-heading"><strong>Payment Details</strong></div>
+							<div class="panel-body">
+								<div class="input-group">
+									<label class="input-group-addon">Credit Card</label>
+									<select name="cctype" class="form-control">
+										<option value="MasterCard">MasterCard</option>
+										<option value="Visa">Visa</option>
+										<option value="American Expresss">American Expresss</option>
+									</select>
+								</div>
+								<div class="input-group">
+									<label class="input-group-addon">Card Number</label>
+									<input name="ccnum" class="form-control" required placeholder="Required" type="text"></input>
+								</div>
+								<div class="input-group">
+									<label class="input-group-addon">CCV</label>
+									<input name="ccv" class="form-control" required placeholder="Required" type="text"></input>
+								</div>
+								<div class="input-group">
+									<label class="input-group-addon auto-resize">Expiry</label>
+									<span class="input-group-addon auto-resize" style="border-right: 0;">Month</span>
+										<script src="js/filldates.js"></script>
+									<select name="month" class="form-control" id="month">
+										<script>makeMonths("month");</script>
+									</select>
+									<span class="input-group-addon auto-resize" style="border-left: 0; border-right: 0;">Year</span>
+									<select name="year" class="form-control" id="year">
+										<script>makeYears("year");</script>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="text-center" id="buttons">
+							<div class="btn-group">
+								<button class="btn btn-default" id="help" onclick="helpClick()" type="button">Help</button>
+								<button class="btn btn-default" onclick="otherSites()" type="button" >Go to other sites</button>
+								<button class="btn btn-primary" id="submit" type="submit" value="submit">Submit</span></button>
+							</div>
+						</div>
+					</form>
 				</div>
-				</form>
 			</div>
-		</div>
     </body>
 </html>

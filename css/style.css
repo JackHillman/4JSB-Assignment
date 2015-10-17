@@ -22,3 +22,6 @@ form {
 #help-container {
 	margin: 20px 0 0;
 }
+.striped-list li:nth-child(even) {
+	background-color: #f9f9f9;
+}
