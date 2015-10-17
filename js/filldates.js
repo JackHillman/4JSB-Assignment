@@ -1,51 +1,65 @@
-var monthName = new Array()
+// Create and array containing the month names
+var monthName = new Array(
+	"January",
+	"February",
+	"March",
+	"April",
+	"May",
+	"June",
+	"July",
+	"August",
+	"September",
+	"October",
+	"November",
+	"December"
+)
 
-monthName[0] = "January";
-monthName[1] = "February";
-monthName[2] = "March";
-monthName[3] = "April";
-monthName[4] = "May";
-monthName[5] = "June";
-monthName[6] = "July";
-monthName[7] = "August";
-monthName[8] = "September";
-monthName[9] = "October";
-monthName[10] = "November";
-monthName[11] = "December";
-
-
-//Year
-
+// Fill year dropdown
 function makeYears(location)
 {
+	// Select location element
 	location = document.getElementById(location);
-	for (var i = year-5; i <= year+5; i++)
+	// For 2 years proir and 8 years in the future
+	for (var i = year-2; i <= year+8; i++)
 	{
+		// Create new DOM element
 		var opt = document.createElement('option');
-		opt.value = i;
-		opt.innerHTML = i;
+		// Set the value to i
+		opt.value = String(i);
+		// Set the contents to i
+		opt.innerHTML = String(i);
+		// If i is the current year
 		if (i === year)
 		{
+			// Set it to selected
 			opt.selected = true;
 		}
+		// Append each element
 		location.appendChild(opt)
 	}
 }
 
-//Month
-
+// Fill month dropdown
 function makeMonths(location)
 {	
+	// Set location element
 	location = document.getElementById(location);
+	// For the 12 months
 	for (var i = 0; i <= 11; i++)
 	{
+		// Create new DOM element
 		var opt = document.createElement('option');
-		opt.value = i;
+		// Set the value to i
+		opt.value = String(i);
+		// Set the contents to the monthName of i
 		opt.innerHTML = monthName[i]
+		// If i is the current month
 		if (i === month)
 		{
+			// Set it to selected
 			opt.selected = true;
 		}
+		// Append each element
 		location.appendChild(opt)
 	}
 }

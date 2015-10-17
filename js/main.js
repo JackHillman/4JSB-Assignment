@@ -2,8 +2,11 @@
 var date = new Date(),
 	year = date.getFullYear(),
 	month = date.getMonth()
-
+	
+////////////////////////////////////////////////////////////////////////
 // submitCheck is called on form submit
+////////////////////////////////////////////////////////////////////////
+
 function submitCheck()
 {
 	// Create an object containing the values from the form
@@ -103,7 +106,10 @@ function submitCheck()
 	return false;
 }
 
+////////////////////////////////////////////////////////////////////////
 // helpClick is called on the Help button click
+////////////////////////////////////////////////////////////////////////
+
 function helpClick()
 {
 	// Open help window with no navigation or status bars at 400px by 250px
@@ -111,11 +117,14 @@ function helpClick()
 	return;
 }
 
+////////////////////////////////////////////////////////////////////////
 // otherSites is called on Go to other sites button click
+////////////////////////////////////////////////////////////////////////
+
 function otherSites()
 {
 	// Init vars for width, height and url to open
-	var width, height, url;
+	var choice, width, height, url;
 	
 	// While the site to goto is not a number or outside the number range
 	while ((isNaN(parseInt(prompt))) || parseInt(prompt) < 1 || parseInt(prompt) > 3)
@@ -127,10 +136,10 @@ function otherSites()
 	}
 	
 	// parse prompt
-	parseInt(prompt);
+	choice = parseInt(prompt);
 	
 	// Set url var switch
-	switch(prompt)
+	switch(choice)
 	{
 		case 1:
 			url = "http://google.com";
