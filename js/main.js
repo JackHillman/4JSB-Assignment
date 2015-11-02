@@ -1,3 +1,123 @@
+/*
+
+Written By Jack Hillman - 17-10-15
+
+::PSUDO CODE::
+
+	submitCheck()
+		INPUT
+			info.object <containing form elements>
+				.fname <First Name>
+				.lname <Last Name>
+				.email <Email>
+				.postcode <Postcode>
+				.ccnum <Credit Card Number>
+				.ccv <CCV>
+				.month <Expirery Month>
+				.year <Expirery Year>
+			final.element <location to put success message>
+			email(x@x.x), postcode(4 digits), ccnum(16 digits) & ccv(3 digits) <regex to be tested>
+			year, month <current year and month>
+		END INPUT
+			
+		DEFINE FUNCTION makeError(main, body)
+			CREATE err.element
+			ADD err main & body
+			APPEND err to loc.element
+		END FUNCTION
+		
+		IF info.email != email.regex
+			makeError()
+			FOCUS email
+		ELSE IF info.postcode != postcode.regex
+			makeError()
+			FOCUS postcode
+		ELSE IF info.ccnum != ccnum.regex
+			makeError()
+			FOCUS ccnum
+		ELSE IF info.ccv != ccv.regex
+			makeError()
+			FOCUS ccv
+		ELSE IF info.year < year OR (info.year = year AND info.month < month)
+			makeError()
+		ELSE
+			HIDE form
+			OUTPUT success
+		END IF
+		
+		RETURN false
+		
+	helpClick()
+		OPEN NEW-WINDOW to html/help.html
+	
+::DESK CHECK::
+
+	INPUT
+		fName: Test
+		lName: Test
+		email: test.com
+		postcode: 12345
+		ccnum: 1234 1234 1234 1234
+		ccv: 123
+		month: 9
+		year: 2015
+		
+	CALC
+		IS fName != null
+			true
+		IS lName != null
+			true
+		IS email = x@x.x
+			false <= ERROR
+		IS postcode = xxxx
+			false <= ERROR
+		IS ccnum = xxxxxxxxxxxxxxxx
+			true
+		IS ccv = xxx
+			true
+		IS month >= 10 WHEN year < 2015
+			false <= ERROR
+		IS year >= 2015
+			true
+			
+	OUTPUT
+		ERROR (email, postcode, month)
+		
+::DESK CHECK::		
+		
+	INPUT
+		fName: 
+		lName:
+		email: test@test.com
+		postcode: 1234
+		ccnum: PayPal
+		ccv: 1234
+		month: 11
+		year: 2015
+		
+	CALC
+		IS fName != null
+			false <= ERROR
+		IS lName != null
+			false <= ERROR
+		IS email = x@x.x
+			true
+		IS postcode = xxxx
+			true
+		IS ccnum = xxxxxxxxxxxxxxxx
+			false <= ERROR
+		IS ccv = xxx
+			false <= ERROR
+		IS month >= 10 WHEN year < 2015
+			true
+		IS year >= 2015
+			true
+			
+	OUTPUT
+		ERROR (fName, lName, ccnum, ccv)
+		
+*/
+
 // Get dates, this is called from the filldates.js file
 var date = new Date(),
 	year = date.getFullYear(),
@@ -152,8 +272,6 @@ function otherSites()
 		case 3:
 			url = "http://learn.tafesa.edu.au";
 			break;
-			
-			// No need for default, options are handled in with statement
 	}
 	
 	// If height is NaN or less than 300 
