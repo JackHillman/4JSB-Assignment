@@ -109,7 +109,7 @@ function submitCheck()
 		document.forms["form"]["ccv"].select();
 	}
 	// If expiry is before current year or before current month on the current year
-	else if (info.year < year || (info.year = year && info.month < month))
+	else if (info.year < year || (info.year == year && info.month < month))
 	{
 		// Make error
 		makeError("Error!", "Credit card has expired!");
